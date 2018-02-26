@@ -6,49 +6,58 @@ body {
 
 
 .parent-hover {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   width: 100%;
   height: 100%;
   background-color: rgb(241, 91, 79);
   position: absolute;
 }
+
+
+
 .myhover::after {
-  box-sizing: border-box;
+  background-image: url(../img/heart1.bmp);
+  background-repeat: no-repeat;
+  color: rgb(207, 193, 169);
+  content: "Pokaż mnie paluszkiem";
+  cursor: pointer;
   margin: auto;
   position: relative;
-  background-color: rgb(197, 231, 231);
-  color: rgb(61, 41, 9);
-  content: "Pokaż mnie paluszkiem";
   width: 100px;
   height: 87.5px;
   top: 20px;
   left: 20px;
   line-height: 0;
   text-indent: -999px;
-  /* display: block; */
-  background-repeat: no-repeat;
+  display: block;
   background-size: contain;
-  cursor: pointer;
-  
+
 }
 
 
 
 .myhover:hover::after {
-  border-bottom-left-radius: 200px;
-  border-bottom-right-radius: 200px;
+  background-image: url(../img/heart1.bmp);
+  background-repeat: no-repeat;
   text-align: center;
-  color: rgb(241, 91, 79);
-  background-image: url(/img/heart1.bmp);
-  text-indent: 0px;
+  color: rgb(219, 198, 196);
+  text-indent: 0;
+  /* z-index: 885; */
   line-height: 3.5rem;
   top: 10%;
   content: "Kocham";
   display: block;
 
+  /* transform: translateY(400px);
+  transition: transform 3s 4s; */
 
-  animation-name: heart;
- 
+  /* animation-name: down;
+  animation-duration: 4s; 
+  animation-timing-function: ease-out; */
+  animation-name: heart; 
+  animation-duration: 0.7s;
+  animation-iteration-count: 100;   
+  /* animation: down 4s ease-in, heart 0.7s ease 0 100; */
 
   /* overflow: auto;  */
   
@@ -59,12 +68,18 @@ body {
   /* transform: scale(2.0); */
  
   /* animation-name: myFrame; */
-  animation-duration: 0.7s; /* or: Xms */
-  animation-iteration-count: 100; 
   /* animation-direction: alternate; or: normal */
-  /* animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
   /* animation-fill-mode: forwards; or: backwards, both, none  */
   /* animation-delay: 2s; or: Xms */
+}
+
+@keyframes down{
+  0%{
+    top: 400px;
+  }
+  100%{
+    top: 400px;
+  }
 }
 @keyframes heart{
 
