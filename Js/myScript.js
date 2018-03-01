@@ -1,3 +1,10 @@
-var span = document.querySelector("#my-span");
+var myButton = document.querySelector("#myButton");
 
-span.innerHTML = " New span";
+myButton.addEventListener('click', changeClass);
+
+let heart = document.querySelector(".heart");
+heart.tinnerHTML = Date();
+function changeClass (){
+   // heart.visiblity="visible";
+   heart.classList.add("heart-pulse");
+}

@@ -2,10 +2,12 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-image: url(../img/valentines-day.png);
 }
 
 
 .parent-hover {
+  background-image: url(../img/valentines-day.png);
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -13,7 +15,63 @@ body {
   position: absolute;
 }
 
+#myButton{
+  position: relative;
+  display: flex;
+  margin: auto;
+  width: 190px;
+  height: 100px;
+  font-size: 1.6rem;
+  text-align: center;
+  background-color: darksalmon;
+  opacity: 0.8;
+  color: darkred;
+  border: 2px solid rgb(179, 86, 86);
+  border-radius: 50%;
+  cursor: pointer;
+}
+#myButton:hover{
 
+  transition: translateY 2s ease-in-out;
+}
+
+.heart{
+  box-sizing: border-box;
+  background-image: url(../img/heart1.bmp);
+  background-repeat: no-repeat;
+  color: rgb(207, 193, 169);
+  margin: auto;
+  position: relative;
+  width: 100px;
+  height: 87.5px;
+  top: 20px;
+  line-height: 0;
+  display: block;
+  background-size: contain;
+  visibility: hidden;
+  /* animation-name: down;
+  animation-duration: 2s; 
+  animation-timing-function: ease-out;  */
+}
+
+.heart-pulse{
+  transform: translateY(400px);
+  
+  visibility: visible;
+  background-image: url(../img/heart1.bmp);
+  background-repeat: no-repeat;
+  text-align: center;
+  color: rgb(219, 198, 196);
+  text-indent: 0;
+  line-height: 3.5rem;
+  /* top: 400px; */
+  content: "Kocham";
+  display: block;
+  animation-name: heart; 
+  /* animation-delay: 2s; */
+  animation-duration: 0.7s;
+  animation-iteration-count: 100; 
+}
 
 .myhover::after {
   box-sizing: border-box;
@@ -27,7 +85,6 @@ body {
   width: 100px;
   height: 87.5px;
   top: 20px;
-  /* left: 20px; */
   line-height: 0;
   text-indent: -999px;
   display: block;
@@ -48,6 +105,9 @@ body {
   top: 10%;
   content: "Kocham";
   display: block;
+  animation-name: heart; 
+  animation-duration: 0.7s;
+  animation-iteration-count: 100;   
 
   /* transform: translateY(400px);
   transition: transform 3s 4s; */
@@ -55,9 +115,6 @@ body {
   /* animation-name: down;
   animation-duration: 4s; 
   animation-timing-function: ease-out; */
-  animation-name: heart; 
-  animation-duration: 0.7s;
-  animation-iteration-count: 100;   
   /* animation: down 4s ease-in, heart 0.7s ease 0 100; */
 
   /* overflow: auto;  */
@@ -75,11 +132,12 @@ body {
 }
 
 @keyframes down{
-  0%{
-    top: 400px;
+  From{
+
   }
-  100%{
-    top: 400px;
+  To{
+    transform: translateY(400px);
+    transition: transform 3s;
   }
 }
 @keyframes heart{
