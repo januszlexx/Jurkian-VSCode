@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="width-device-width, initial-scale=1.0">
+   <title>Dla Tosi</title>
+   <style>
+		body {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+			z-index:9998;
+		  background-image: url(img/valentines-day.png);
+		}
+
+
+		.parent-hover {
+		  background-image: url(img/valentines-day.png);
+		  width: 100%;
+		  height: 100%;
+		  /* margin-left: -10%; */
+		  background-color: rgb(241, 91, 79);
+		  position: absolute;
+		}
+
+
+		.myButton {
+		  top: 10%;
+		  padding-top: 30px;
+		  /* border: 2px solid rgb(241, 91, 79); */
+		  position: relative;
+		  color: rgb(215, 240, 72); 
+		  background-image: url(img/heart_g.png);
+		  background-repeat: no-repeat;
+		  background-size: contain;
+		  line-height: 0;
+		  display: block;
+		  width: 100px;
+		  height: 87.5px;
+		  margin: auto;
+		  cursor: pointer;
+		}
+
+		.square {
+		  position: relative;
+		  background-image: url(img/heart_g.png);
+		  background-repeat: no-repeat;
+		  background-size: contain;
+		  width: 100px;
+		  height: 100px;
+		  margin: auto;
+		  top: 20px;
+		  visibility: hidden;
+		}
+		.square-two {
+		  visibility: visible;
+		  top: 300px;
+		  animation: down 2s ease-out, pulsate 2s 2s ease-in-out, heart .7s 4s infinite ease-in-out;
+		}
+		.square-two::after {
+		  content: "Kocham";
+		  text-align: center;
+		  padding-left: 20px;
+		  color: rgb(219, 198, 196);
+		  text-indent: 0;
+		  line-height: 3.5rem;
+		}
+
+
+
+		@keyframes down{
+		 From{
+			top: 20px;
+		  }
+		  To{
+			top: 200px;
+		  }
+		}
+		@keyframes heart{
+
+		  From {
+			top: 200px;
+			transform: scale(3.6);
+		  }
+		  To {
+			top: 200px;
+			transform: scale(3.4);
+		  }
+		}
+
+
+		@keyframes pulsate {
+		  0%{
+			top: 200px;
+			transform: scale(1);
+		  }
+		  50%{
+			top: 200px;
+			transform: scale(6);
+		  }
+		  100%{
+			top: 200px;
+			transform: scale(3.4);
+		  }
+		}
+
+
+   </style>
+</head>
+<body>
+  <div class="parent-hover">
+      <div class="myButton">Połóż paluszek</div>
+      <br>
+      <!-- <div class="myhover"></div>  -->
+      <div class="square"></div>
+   </div> 
+<script>
+		let myButton = document.querySelector(".myButton");		
+		let square = document.querySelector(".square");
+		
+		myButton.addEventListener('mouseover', changeClass);
+
+		function changeClass (){
+		   myButton.style.visibility="hidden";
+		   square.classList.add("square-two");
+		}
+
+</script>
+</body>
+</html>

@@ -2,198 +2,99 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100vh;
+  height: 100vh;
+  z-index:9998;
   background-image: url(../img/valentines-day.png);
 }
 
+    #sticky {
+      background-image: url(../img/valentines-day.png);
+      width:100%;
+      height:100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 9999;
+    }
 
-.parent-hover {
-  background-image: url(../img/valentines-day.png);
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(241, 91, 79);
-  position: absolute;
+.put-finger{
+      top: 10%;
+      padding-top: 10px;
+      position: relative;
+      color: rgb(215, 240, 72); 
+      background-image: url(../img/heart_g.png);
+      background-repeat: no-repeat;
+      background-size: contain;        
+      line-height: 2;
+      text-align: center;
+      display: block;
+      width: 100px;
+      height: 87.5px;
+      margin: auto;
+      cursor: pointer;
 }
 
-#myButton{
-  position: relative;
-  display: flex;
-  margin: auto;
-  width: 190px;
-  height: 100px;
-  font-size: 1.6rem;
-  text-align: center;
-  background-color: darksalmon;
-  opacity: 0.8;
-  color: darkred;
-  border: 2px solid rgb(179, 86, 86);
-  border-radius: 50%;
-  cursor: pointer;
+.my-heart {
+      position: relative;
+      background-image: url(../img/heart_g.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      top: 20px;
+      visibility: hidden;
 }
-#myButton:hover{
-
-  transition: translateY 2s ease-in-out;
+.my-heart-two {
+      visibility: visible;
+      top: 300px;
+      animation: down 2s ease-out, enlarge 2s 2s ease-in-out, pulsate .7s 4s infinite ease-in-out;
 }
-
-.heart{
-  box-sizing: border-box;
-  background-image: url(../img/heart1.bmp);
-  background-repeat: no-repeat;
-  color: rgb(207, 193, 169);
-  margin: auto;
-  position: relative;
-  width: 100px;
-  height: 87.5px;
-  top: 20px;
-  line-height: 0;
-  display: block;
-  background-size: contain;
-  visibility: hidden;
-  /* animation-name: down;
-  animation-duration: 2s; 
-  animation-timing-function: ease-out;  */
+.my-heart-two::after {
+      content: "Kocham";
+      text-align: center;
+      padding-left: 20px;
+      color: rgb(219, 198, 196);
+      text-indent: 0;
+      line-height: 3.5rem;
 }
 
-.heart-pulse{
-  transform: translateY(400px);
-  
-  visibility: visible;
-  background-image: url(../img/heart1.bmp);
-  background-repeat: no-repeat;
-  text-align: center;
-  color: rgb(219, 198, 196);
-  text-indent: 0;
-  line-height: 3.5rem;
-  /* top: 400px; */
-  content: "Kocham";
-  display: block;
-  animation-name: heart; 
-  /* animation-delay: 2s; */
-  animation-duration: 0.7s;
-  animation-iteration-count: 100; 
-}
-
-.myhover::after {
-  box-sizing: border-box;
-  background-image: url(../img/heart1.bmp);
-  background-repeat: no-repeat;
-  color: rgb(207, 193, 169);
-  content: "Pokaż mnie paluszkiem";
-  cursor: pointer;
-  margin: auto;
-  position: relative;
-  width: 100px;
-  height: 87.5px;
-  top: 20px;
-  line-height: 0;
-  text-indent: -999px;
-  display: block;
-  background-size: contain;
-
-}
-
-
-
-.myhover:hover::after {
-  background-image: url(../img/heart1.bmp);
-  background-repeat: no-repeat;
-  text-align: center;
-  color: rgb(219, 198, 196);
-  text-indent: 0;
-  /* z-index: 885; */
-  line-height: 3.5rem;
-  top: 10%;
-  content: "Kocham";
-  display: block;
-  animation-name: heart; 
-  animation-duration: 0.7s;
-  animation-iteration-count: 100;   
-
-  /* transform: translateY(400px);
-  transition: transform 3s 4s; */
-
-  /* animation-name: down;
-  animation-duration: 4s; 
-  animation-timing-function: ease-out; */
-  /* animation: down 4s ease-in, heart 0.7s ease 0 100; */
-
-  /* overflow: auto;  */
-  
-  /* background-color: blueviolet;  */
-  /* width: 200px; */
-  /* right: 100vw; */
-  /* margin-right: 5px; */
-  /* transform: scale(2.0); */
- 
-  /* animation-name: myFrame; */
-  /* animation-direction: alternate; or: normal */
-  /* animation-fill-mode: forwards; or: backwards, both, none  */
-  /* animation-delay: 2s; or: Xms */
-}
 
 @keyframes down{
   From{
-
-  }
-  To{
-    transform: translateY(400px);
-    transition: transform 3s;
-  }
+    top: 20px;
+    }
+    To{
+    top: 200px;
+    }
 }
-@keyframes heart{
 
-  From {
-    top: 300px;
+@keyframes pulsate {
+    From {
+    top: 200px;
+    transform: scale(3.6);
+    }
+    To {
+    top: 200px;
+    transform: scale(3.4);
+    }
+}
+
+@keyframes enlarge {
+    0%{
+    top: 200px;
+    transform: scale(1);
+    }
+    50%{
+    top: 200px;
+    transform: scale(6);
+    }
+    100%{
+    top: 200px;
     transform: scale(3.4);
   }
-  To {
-    top: 300px;
-    transform: scale(3.6);
-  }
 }
-/* 
-@keyframes heart{
-  0% {
-    
-    top: 10px;
-  }
-  20% {
-   
-    top: 400px;
-    text-replace: "Kocham";
-    transform: scale(2);
-  }
-  30% {
-    top: 400px;
-    transform: scale(2.3);
-  }
-  40% {
-    top: 400px;
-    transform: scale(2.0);
-  }
-  50% {
-    top: 400px;
-    transform: scale(2.3);    
-  }
-  60% {
-    top: 400px;
-    transform: scale(2.0);
-  }
-  70% {
-    top: 400px;
-    transform: scale(2.3);
-  }
-  80% {
-    top: 400px;
-    transform: scale(2.0);    
-  }
-  90% {
-    top: 400px;
-    transform: scale(2.3);    
-  }
-  100% {
-    top: 400px;
-    transform: scale(2.0);    
-  }
-} */
+
+
 

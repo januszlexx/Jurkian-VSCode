@@ -1,10 +1,9 @@
-var myButton = document.querySelector("#myButton");
+let myButton = document.querySelector(".put-finger");		
+		let square = document.querySelector(".my-heart");
+		
+		myButton.addEventListener('mouseover', changeClass);
 
-myButton.addEventListener('click', changeClass);
-
-let heart = document.querySelector(".heart");
-heart.tinnerHTML = Date();
-function changeClass (){
-   // heart.visiblity="visible";
-   heart.classList.add("heart-pulse");
-}
+		function changeClass (){
+		   myButton.style.visibility="hidden";
+		   square.classList.add("my-heart-two");
+		}
